@@ -1,0 +1,667 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "SchoolAPI",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/CompanyMaster/GetAll": {
+      "get": {
+        "tags": [
+          "CompanyMaster"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CompanyMaster"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CompanyMaster"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CompanyMaster"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/DeptMaster/GetAllDepartments": {
+      "get": {
+        "tags": [
+          "DeptMaster"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/DeptMaster/GetAllDepartmentsBySchoolID": {
+      "get": {
+        "tags": [
+          "DeptMaster"
+        ],
+        "parameters": [
+          {
+            "name": "cmpId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "schId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/DeptMaster/GetDepartmentByName": {
+      "get": {
+        "tags": [
+          "DeptMaster"
+        ],
+        "parameters": [
+          {
+            "name": "cmpId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "schId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "deptName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/DeptMaster/AddDepartment": {
+      "post": {
+        "tags": [
+          "DeptMaster"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepartmentDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepartmentDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepartmentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/DeptMaster/UpdateDepartment": {
+      "put": {
+        "tags": [
+          "DeptMaster"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepartmentDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepartmentDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepartmentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/DeptMaster/DeleteDepartment": {
+      "delete": {
+        "tags": [
+          "DeptMaster"
+        ],
+        "parameters": [
+          {
+            "name": "deptId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/SchoolMaster/GetAll": {
+      "get": {
+        "tags": [
+          "SchoolMaster"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SchoolMaster"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SchoolMaster"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SchoolMaster"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/SchoolMaster/GetSchoolByCompany": {
+      "get": {
+        "tags": [
+          "SchoolMaster"
+        ],
+        "parameters": [
+          {
+            "name": "cmpId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SchoolMaster"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SchoolMaster"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SchoolMaster"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CompanyMaster": {
+        "type": "object",
+        "properties": {
+          "cmpId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cmpName": {
+            "type": "string",
+            "nullable": true
+          },
+          "cmpDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "cmpAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "cmpCity": {
+            "type": "string",
+            "nullable": true
+          },
+          "cmpState": {
+            "type": "string",
+            "nullable": true
+          },
+          "cmpCountry": {
+            "type": "string",
+            "nullable": true
+          },
+          "cmpEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "cmpIsActive": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "cmpStateId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cmpCityId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cmpEstablishmentYear": {
+            "type": "string",
+            "nullable": true
+          },
+          "cmpJurisdictionArea": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "modifiedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DepartmentDto": {
+        "type": "object",
+        "properties": {
+          "deptId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deptCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "deptName": {
+            "type": "string",
+            "nullable": true
+          },
+          "deptCmpId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "deptSchId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deptIsActive": {
+            "type": "boolean"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "modifiedDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SchoolMaster": {
+        "type": "object",
+        "properties": {
+          "schId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "schName": {
+            "type": "string",
+            "nullable": true
+          },
+          "schDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "schEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "schAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "schCity": {
+            "type": "string",
+            "nullable": true
+          },
+          "schState": {
+            "type": "string",
+            "nullable": true
+          },
+          "schCountry": {
+            "type": "string",
+            "nullable": true
+          },
+          "schZipcode": {
+            "type": "string",
+            "nullable": true
+          },
+          "schPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "schMobile": {
+            "type": "string",
+            "nullable": true
+          },
+          "schIsActive": {
+            "type": "boolean"
+          },
+          "schCmpId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "schStateId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "schCityId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "schEstablishmentYear": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "schJurisdictionArea": {
+            "type": "string",
+            "nullable": true
+          },
+          "schBankAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "schBankAccountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "modifiedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temperatureF": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
